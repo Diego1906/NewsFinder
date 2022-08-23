@@ -10,7 +10,7 @@ interface INewsApi {
     @GET("everything")
     suspend fun getArticles(
         @Query("q") description: String,
-        @Query("from") from: String,
+        @Query("from") dateFrom: String,
         @Query("sortBy") sortBy: String = "publishedAt",
         @Query("apiKey") apiKey: String = BuildConfig.API_KEY
     ): ArticleResponse
