@@ -1,23 +1,25 @@
 package com.example.newsfinder.data.response
 
+import com.squareup.moshi.Json
+
 data class ArticleResponse(
-    val status: String? = null,
-    val totalResults: Int,
-    val articles: List<ArticleItemResponse>? = null
+    @Json(name = "status") val status: String? = null,
+    @Json(name = "totalResults") val totalResults: Int,
+    @Json(name = "articles") val articles: List<ArticleItemResponse>? = null
 )
 
 data class ArticleItemResponse(
-    val source: ArticleSourceItemResponse? = null,
-    val author: String? = null,
-    val title: String? = null,
-    val description: String? = null,
-    val url: String? = null,
-    val urlToImage: String? = null,
-    val publishedAt: String? = null,
-    val content: String? = null
+    @Json(name = "source") val source: ArticleSourceItemResponse? = null,
+    @Json(name = "author") val author: String? = null,
+    @Json(name = "title") val title: String? = null,
+    @Json(name = "description") val description: String? = null,
+    @Json(name = "url") val url: String? = null,
+    @Json(name = "urlToImage") val urlToImage: String? = null,
+    @Json(name = "publishedAt") val publishedAt: String? = null,
+    @Json(name = "content") val content: String? = null
 )
 
 data class ArticleSourceItemResponse(
-    val id: String? = null,
-    val name: String? = null
+    @Json(name = "id") val id: String? = null,
+    @Json(name = "name") val name: String? = null
 )
