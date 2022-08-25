@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface INewsApi {
 
-    @GET("everything")
+    @GET("v2/everything")
     suspend fun getArticles(
         @Query("q") description: String,
         @Query("from") dateFrom: String,
