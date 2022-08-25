@@ -4,18 +4,18 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App : Application() {
+class NewsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
     }
 
     companion object {
-        private lateinit var INSTANCE: App
+        private lateinit var INSTANCE: NewsApplication
 
-        fun getInstance(): App {
+        fun getInstance(): NewsApplication {
             if (!::INSTANCE.isInitialized) {
-                INSTANCE = App()
+                INSTANCE = NewsApplication()
             }
             return INSTANCE
         }
