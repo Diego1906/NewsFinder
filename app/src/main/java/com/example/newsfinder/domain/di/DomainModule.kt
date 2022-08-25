@@ -7,13 +7,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.components.SingletonComponent
 
-// TODO: Testar com as duas classes abaixo
-@Module
-// @InstallIn(SingletonComponent::class)
 @InstallIn(ActivityComponent::class)
-class DomainModule {
+@Module
+object DomainModule {
 
     @Provides
     fun provideUseCase(repository: IArticlesRepository): IArticlesUseCase {
