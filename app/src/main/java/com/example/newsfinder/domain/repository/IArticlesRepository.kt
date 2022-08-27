@@ -1,8 +1,8 @@
 package com.example.newsfinder.domain.repository
 
-import com.example.newsfinder.domain.entities.ArticleEntity
+import com.example.newsfinder.domain.entities.ArticlesEntity
 
 interface IArticlesRepository {
 
-    suspend fun getArticles(): ArticleEntity
+    suspend fun getArticles(): ArticlesEntity
 }

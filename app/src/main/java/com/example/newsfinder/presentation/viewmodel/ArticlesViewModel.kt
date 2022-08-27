@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newsfinder.domain.entities.ArticleEntity
+import com.example.newsfinder.domain.entities.ArticlesEntity
 import com.example.newsfinder.domain.usecase.IArticlesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -17,8 +17,8 @@ class ArticlesViewModel @Inject constructor(
 ) : IArticlesViewModel,
     ViewModel() {
 
-    private val articles: MutableLiveData<ArticleEntity> by lazy {
-        MutableLiveData<ArticleEntity>().also {
+    private val articles: MutableLiveData<ArticlesEntity> by lazy {
+        MutableLiveData<ArticlesEntity>().also {
             loadArticles()
         }
     }
@@ -29,7 +29,7 @@ class ArticlesViewModel @Inject constructor(
         }
     }
 
-    override fun getArticles(): LiveData<ArticleEntity> {
+    override fun getArticles(): LiveData<ArticlesEntity> {
         return articles
     }
 

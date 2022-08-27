@@ -1,9 +1,9 @@
 package com.example.newsfinder.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
-import com.example.newsfinder.domain.entities.ArticleEntity
+import com.example.newsfinder.domain.entities.ArticlesEntity
 
 interface IArticlesViewModel {
 
-    fun getArticles(): LiveData<ArticleEntity>
+    fun getArticles(): LiveData<ArticlesEntity>
 }

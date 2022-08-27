@@ -1,8 +1,8 @@
 package com.example.newsfinder.domain.usecase
 
-import com.example.newsfinder.domain.entities.ArticleEntity
+import com.example.newsfinder.domain.entities.ArticlesEntity
 
 interface IArticlesUseCase {
 
-   suspend fun getArticles(): ArticleEntity
+   suspend fun getArticles(): ArticlesEntity
 }

@@ -1,8 +1,8 @@
 package com.example.newsfinder.domain.entities
 
-data class ArticleEntity(
+data class ArticlesEntity(
     val status: String? = null,
-    val totalResults: Int,
+    val totalResults: Int = 0,
     val articles: List<ArticleItemEntity>? = null
 )
 
