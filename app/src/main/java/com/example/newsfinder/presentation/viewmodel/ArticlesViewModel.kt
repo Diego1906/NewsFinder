@@ -9,15 +9,14 @@ import com.example.newsfinder.domain.usecase.IArticlesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
-// @HiltViewModel
 class ArticlesViewModel @Inject constructor(
     private val useCase: IArticlesUseCase
-) : IArticlesViewModel,
-    ViewModel() {
+) : IArticlesViewModel, ViewModel() {
 
-    private val articles: MutableLiveData<ArticlesEntity> by lazy {
+    private val articles by lazy {
         MutableLiveData<ArticlesEntity>().also {
             loadArticles()
         }
@@ -25,7 +24,11 @@ class ArticlesViewModel @Inject constructor(
 
     private fun loadArticles() {
         viewModelScope.launch(Dispatchers.IO) {
-            useCase.getArticles()
+            try {
+                articles.postValue(useCase.getArticles())
+            } catch (ex: Throwable) {
+                Timber.e(ex)
+            }
         }
     }
 
