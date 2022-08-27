@@ -3,7 +3,6 @@ package com.example.newsfinder.presentation.view
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.example.newsfinder.R
 import com.example.newsfinder.presentation.viewmodel.IArticlesViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        viewModel.getArticles().observe(this, Observer { articles ->
+        viewModel.getArticles().observe(this) { articles ->
             articles?.let {
-                findViewById<TextView>(R.id.txtTeste).text = it.articles?.first()?.title
+                findViewById<TextView>(R.id.txtTeste).text = it.articles?.last()?.title
             }
-        })
+        }
     }
 }
