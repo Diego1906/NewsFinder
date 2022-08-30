@@ -9,7 +9,7 @@ interface INewsApi {
 
     @GET("v2/everything")
     suspend fun getArticles(
-        @Query("q") description: String,
+        @Query("q") description: String = "Bitcoin",
         @Query("pageSize") pageSize: Int = 10,
         @Query("language") language: String = "pt",
         @Query("sortBy") sortBy: String = "relevancy",
