@@ -1,6 +1,6 @@
 package com.example.newsfinder.data.remote
 
-interface IRetrofitConfig {
+interface IServiceConfig {
 
     fun getInstance(): INewsApi
 }
