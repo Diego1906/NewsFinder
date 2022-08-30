@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">News Finder</string>
+    <string name="item_image_description">Imagem da notícia</string>
 </resources>
