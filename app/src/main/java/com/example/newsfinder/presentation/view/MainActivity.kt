@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         viewModel.getArticles().observe(this) { articles ->
-            articles?.let {
-                findViewById<TextView>(R.id.txtTeste).text = it.articles?.last()?.title
+            articles?.let { results ->
+                findViewById<TextView>(R.id.txtTeste).text =
+                    results.articles?.firstOrNull { it.title != null }?.title
             }
         }
     }
