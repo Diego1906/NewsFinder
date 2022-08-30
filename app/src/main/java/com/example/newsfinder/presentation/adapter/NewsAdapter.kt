@@ -4,8 +4,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.newsfinder.domain.entities.ArticlesEntity
+import com.example.newsfinder.presentation.utils.getAuthor
 import com.example.newsfinder.presentation.viewholder.ItemHolder
 import com.example.newsfinder.presentation.utils.getId
+import com.example.newsfinder.presentation.utils.getTitle
 
 class NewsAdapter(private val action: (ArticlesEntity) -> Unit) :
     ListAdapter<ArticlesEntity, ItemHolder>(DiffCallback) {
@@ -29,6 +31,8 @@ class NewsAdapter(private val action: (ArticlesEntity) -> Unit) :
 
         override fun areContentsTheSame(oldItem: ArticlesEntity, newItem: ArticlesEntity): Boolean {
             return oldItem.getId() == newItem.getId()
+                    && oldItem.getTitle() == newItem.getTitle()
+                    && oldItem.getAuthor() == newItem.getAuthor()
         }
     }
 }
