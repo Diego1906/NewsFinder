@@ -16,6 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@android:layout/preference_category" />
+        tools:listitem="@layout/item_list_news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
