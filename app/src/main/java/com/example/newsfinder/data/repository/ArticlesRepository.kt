@@ -9,6 +9,6 @@ import javax.inject.Inject
 class ArticlesRepository @Inject constructor(private val api: INewsApi) : IArticlesRepository {
 
     override suspend fun getArticles(): ArticlesEntity {
-        return api.getArticles(description = "bmw", dateFrom = "2022-08-15").toEntity()
+        return api.getArticles().toEntity()
     }
 }
