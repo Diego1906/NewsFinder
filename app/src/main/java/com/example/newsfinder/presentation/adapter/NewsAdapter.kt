@@ -17,10 +17,11 @@ class NewsAdapter(private val action: (ArticlesEntity) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        val article = getItem(position)
-        holder.run {
-            itemView.setOnClickListener { action.invoke(article) }
-            bind(article)
+        getItem(position).also { article ->
+            holder.run {
+                itemView.setOnClickListener { action.invoke(article) }
+                bind(article)
+            }
         }
     }
 
